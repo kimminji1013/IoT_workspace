@@ -1,4 +1,5 @@
 # 주소록 앱 ---> 객체 지향적으로 만들기
+# ex02 : 목록 추가를 자동으로 만들기
 # 코드짜기 전에 필요한 객체 뭔지 구분할 것.
 """
 1. 문제파악
@@ -15,7 +16,7 @@
 """
 import time
 import sys
-
+from app_base import Application
 
 # 모델 객체 : 정보(데이타)만을 저장하는 Class 
 class Configuration:
@@ -88,6 +89,18 @@ class AddressBook:
                 f.write(line+'\n')
 
 
+    # 이름 검색
+    def search(self,keyword):
+        result = []
+        # for line in self.book:
+        #     if line.name.fine(keyword) != -1:  # keyword를 포함한다면 (완벽히 맞지 않아도 됨.)
+        #         result.append(line)
+        # return result
+        return list(filter(lambda line : line.name.find(keyword) != -1,self.book))
+        
+        
+
+
     # 추가
     def add(self, name, phone, email, addr):
         entry = AddressBookEntry(name, phone, email, addr)
@@ -117,50 +130,76 @@ class AddressBook:
 # book.load(config)
 # print(book)
 
+class MenuItem:
+    def __init__(self,title,func):
+        self.title = title
+        self.func = func
+
+    def __str__(self):
+        return f'<MenuItem {self.title}>'
+    def __repr__(self):
+        return f'<MenuItem {self.title} >'
+
+#MenuItem을 관리하는 객체
+class Menu:
+    def __init__(self):
+        self.menu_items = []
+
+    def add(self, title, func):
+        menu_item = MenuItem(title,func)
+        self.menu_items.append(menu_item)
+
+    def select_menu(self):
+        for ix, menu_item in enumerate (self.menu_items,1):
+            print(f'{ix}) {menu_item.title}',sep='\n')
+        print()
+        menu = int(input('번호를 입력해주세요 : '))
+        return menu
+
+    def run_menu(self, menu):
+        if 1 <= menu <len(self.menu_items)+1: #리스트 검색 써도 되는지?
+            menu_item = self.menu_items[menu-1]
+            menu_item.func()
+        else:
+            print('메뉴 번호를 다시 한 번 확인해 주세요.')
+
 
 
 # Configuration :  설정 정보 담당
 # AdressBookEntry : 한 사람의 주소 정보 담당
 # AdressBook : 목록 관리
-class Application:
+class AddressBookApp(Application):  # 상속
     def __init__(self):
+        super().__init__()
         self.config = Configuration()
         self.addressbook = AddressBook()
         self.addressbook.load(self.config)
+        self.menu = Menu()
+    
 
-    def select_menu(self):
-        print('1. 목록', '2. 상세보기','3. 추가', '4. 수정', '5. 삭제','6. 종료',sep='\n')
-        menu = int(input('입력:'))
-        return menu
-        
-    def run(self,menu):
-        if menu == 1: #목록
-            self.print_book()
-        elif menu == 2: #상세보기
-            self.print_detail()
-        elif menu == 3: #추가
-            self.add()
-        elif menu == 4: #수정
-            self.update()
-        elif menu == 5: #삭제
-            self.delete()
-        elif menu == 6: #종료
-                #sys.exit(0) 그냥 시스템 종료
-            self.exit()
-        else:
-            print('Wrong number')
+    def create_menu(self, menu):
+        menu.add('목록', self.print_book)
+        menu.add('상세보기', self.print_detail)
+        menu.add('검색', self.search)
+        menu.add('추가', self.add)
+        menu.add('수정', self.update)
+        menu.add('삭제', self.delete)
+        menu.add('종료', self.exit)
 
     
+
     def print_book(self):
         print("="*50)
         print('주소록')
         print("="*50)
         for index, entry in enumerate(self.addressbook.book,1):
             # 동명이인 처리 위해 index 넣어줌
-            print(f'{index:d}){entry.name}:{entry.phone},{entry.email},{entry.addr}')
+            print(f'{index:02d}){entry.name}:{entry.phone},{entry.email},{entry.addr}')
+        print("-"*50)
         time.sleep(1)
 
     def print_detail(self):
+        self.print_book()
         index = int(input('상세보기 할 번호를 입력해 주세요 : '))
         entry = self.addressbook.book[index-1]
         # print(entry)
@@ -170,6 +209,19 @@ class Application:
         print(f'주소 : {entry.addr}')
         time.sleep(2)
 
+    # 검색방법 : 부분일치
+    def search(self):
+        keyword = input('검색어:')
+        result = self.addressbook.search(keyword)
+        print("="*50)
+        print(f'검색 결과 : {len(result)}건')
+        print("="*50)
+        for index, entry in enumerate(result,1):
+            print(f'{index:02d}) {entry.name}:{entry.phone},{entry.email},{entry.addr}')
+        print("-"*50)
+        time.sleep(1)
+    
+    
     def add(self):
         print('새 주소록 항목 추가')
         name = input('이름 :')
@@ -214,21 +266,17 @@ class Application:
             print(f'{index}번 정보가 정상적으로 삭제되었습니다.')
             time.sleep(1)
 
-    def exit(self):
-        answer = input('종료하시겠습니까? [Y/N]')
-        if answer == 'n'or answer =='N':
-            print('메뉴로 돌아갑니다.')
-            time.sleep(1)   
-        elif answer == 'Y'or answer =='y':        
-            self.addressbook.save(self.config)
-            sys.exit(0)
+
+    def destroyed(self):
+        super().destroyed() # 부모와 자식 둘 다 destroyed 있음. 이 때 부모의 destroyed 먼저 쓰고싶으면 이 명령어 사용
+                            # 이 명령어 사용하지 않는다면 self가 현재 AdressBookApp의 self 이므로 자식것 실행
+        self.addressbook.save(self.config)
+
+
 
 def main():
-    app = Application()
-    while True:
-        menu = app.select_menu()
-        app.run(menu)
-
+    app = AddressBookApp()
+    app.run()
 
 main()
 
