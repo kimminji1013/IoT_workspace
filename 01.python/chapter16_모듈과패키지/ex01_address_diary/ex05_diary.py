@@ -13,7 +13,7 @@ class DiaryApp(Application):
         menu.add('수정',self.update)
         menu.add('삭제',self.delete)
         menu.add('종료',self.exit)
-        pass
+        
 
     def write(self):
         print('오늘의 일기')

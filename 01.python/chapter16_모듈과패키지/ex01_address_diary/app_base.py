@@ -46,7 +46,7 @@ class Menu:
         for ix, menu_item in enumerate (self.menu_items,1):
             print(f'{ix}) {menu_item.title}',sep='\n')
         print()
-        menu = int(input('번호를 입력해주세요 : '))
+        menu = int(float(input('번호를 입력해주세요 : ')))
         return menu
 
     def run_menu(self, menu):
