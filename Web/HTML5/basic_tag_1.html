@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>태그 기본 문법</title>
+    </head>
+    <body>
+        <header>
+            <center>
+                <h1>&lt; HTML 특수문자 &gt; </h1>
+            </center>
+        </header>
+        <section>
+            <article>
+                &num; 웹 프로그래밍 &num;
+                <p></p>
+                HTML5 &#38; CSS3 &#38; JavaScript &#38; JQuery
+            </article>
+            <article>
+                <hr/>
+                <h3> Pre tag 이용</h>
+                <pre>
+                    pre tag 이용하면 특수기호 그냥 쓰면 됨! 
+                    아~주 유용하네요 ^^
+
+                    E-mail : kimminji1013@webmail.korea.ac.kr
+                </pre>
+            </article>
+            <article>
+                <hr/>
+                <h3> 텍스트 관련 테그 </h3>
+                지금은 스타일을 담당하는 css가 있기 때문에, css로 처리합니다.
+            </article>
+            <article>
+                <hr/>
+                <h3> 하이퍼링크 관련 테그 </h3>
+                <a href="http://www.w3.org" target="_blank" title="Html 표준화 사이트"> W3C 사이트(blank window)</a><p/>
+                <a href="basic_tag/sub.html"> sub.html </a><p/>
+                <a href="/basic_tag/sub.html"> sub.html </a><p/>
+                <!-- 절대경로지만, OS의 root가 아니라, 웹 서버가 서비스 하는 공간의 최상위 디렉토리임. 우리는 라이브서버를 사용중임 
+                라이브 서버는 프로젝트 디렉토리가 루트임! 그래서 오류가 나지 않음. -->
+            </article>
+            <article>
+                <hr/>
+                <h3> 이미지 하이퍼링크 </h3>
+                <!-- <img src="sub_cat.jfif" border="5" width="210" height="130"
+                    alt="Welcome" title="환경합니다!"> -->
+                <a href="/basic_tag/sub.html"> <img src= "cat.jfif" border="5" width="210" height="130"> </a><p/>
+            </article>
+            <article>
+                <hr/>
+                <h3> 책갈피 기능 </h3>
+                <a href ="#user">[이름]</a> &nbsp;
+                <a href ="#addr ">[주소]</a> &nbsp;
+                <a href ="#tel ">[전화번호]</a> &nbsp;
+                <a href ="#foot">[참고]</a> &nbsp;
+            </article>
+        </section>
+        <p><a id="user">김민지</a></p>
+        <a href="#top">[TOP]</a>
+        <hr size="10" align="left" width="90%" noshade="noshade"></hr>
+        <footer>
+            <small>
+                &nbsp;&nbsp; &copy; 김민지 &nbsp;&nbsp;
+                &nbsp;&nbsp; &reg; 2021.01.20
+            </small>
+        </footer>
+    </body>
+</html>

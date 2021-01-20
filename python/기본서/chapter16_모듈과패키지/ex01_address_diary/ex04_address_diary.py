@@ -19,7 +19,7 @@ import sys
 from app_base import Application
 
 
-# 모델 객체
+# 모델 객체 : 로직 없이 데이터만 관리는 클래스
 class AddressBookEntry:
     def __init__(self, name, phone, email, addr):
         self.name = name
