@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="basic_css.css"></link>
+        <!-- 위치 상관없지만 주로 head에 작성 -->
+        <!-- style 태그 내부는 CSS 문법 적용 구간, html 아님 -->
+        <style>
+            p2 { color: blue;}
+            /* 외부 인라인과 충돌나면 내부 인라인이 우선순위 */
+            p3 { color: rgb(150, 67, 233);}
+        </style>
+    </head>
+    <body>
+        <p1 style="color:red;">인라인 시트 적용</p1><br>
+        <p2>내부 스타일 시트 적용</p2><br>
+        <p3>외부 인라인 시트 적용</p3><br>    
+        <p1>인라인 시트는 적용될까? 안됨</p1>    
+        <!-- ------------------------------------------------------------->
+        <hr size="10" align="left" width="100%" noshade="noshade" ></hr>
+        <footer>
+            <small>
+                &nbsp;&nbsp; &copy; 김민지 &nbsp;&nbsp;
+                &nbsp;&nbsp; &reg; 2021.01.21
+            </small>
+        </footer>
+    </body>
+</html>

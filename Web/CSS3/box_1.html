@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p{
+                background-color: rgb(190, 235, 230);
+                color: navy;
+                font-weight:bold;
+                font-size:11pt
+            }
+            p.pad{
+                color:red;
+                padding:20px
+            }
+            p.mar{
+                color:green;
+                margin: 30px;
+            }
+            p.mp{
+                color:yellow;
+                padding:5%;
+                margin:3%;
+            }
+            .center{
+                width: 600px;
+                margin: 16px auto;
+                background-color: yellowgreen;
+                color: rgb(24, 15, 80);
+                text-align:center;
+            }
+             /* 둥근 모서리 */
+            .br3{
+                background-color: slateblue;
+                color:aqua;
+                border-style:dashed;
+                border-width: 5px;
+                border-color: bisque;
+                border-radius: 17px;
+                text-align:center;
+            }
+            /* 그림자 효과 */
+            #shadow {
+                border: 2px solid rgb(12, 51, 22);
+                box-shadow: 10px 10px #BCE55C, 20px 20px #CEF279, 30px 30px #E4F7BA;
+                text-align:center;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <p>박스의 안쪽 여백과 바깥쪽 여백 지정</p>
+        <p class='pad'> (1) 안쪽 여백 지정-padding 20px</p>
+        <p class='mar'> (2) 바깥쪽 여백 지정-margin 30px</p>
+        <p class='mp'> (3) 안쪽, 바깥쪽 여백 지정-padding 5%, margin 5% </p>
+        <p class='center' > margin을 상하는 16px 좌우는 자동으로 배정해라! (가운데 배정)</p>
+
+        <h1 class='br3'>둥근 모서리 스타일링 상하좌우25px</h1>
+
+        <div id='shadow'>
+            <h3> 박스 그림자 효과</h3>
+        </div>
+
+        <!-- ------------------------------------------------------------->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr size="10" align="left" width="100%" noshade="noshade" ></hr>
+        <footer>
+            <small>
+                &nbsp;&nbsp; &copy; 김민지 &nbsp;&nbsp;
+                &nbsp;&nbsp; &reg; 2021.01.21
+            </small>
+        </footer>
+    </body>
+</html>

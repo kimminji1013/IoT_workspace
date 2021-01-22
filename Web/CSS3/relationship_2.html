@@ -1,0 +1,42 @@
+<!-- 후손 선택자 : 선택자A 선택자B (space bar) -->
+<!-- 자손 선택자 : 선택자A>선택자B (>, 선택자A가 부모임) -->
+<!-- 형제 선택자 : 선택자+(~)선택자 (인접하면 +, 아니면 ~) -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body > div > h4 {color:rgb(224, 95, 56);}
+            body > p {color:rgb(241, 243, 108); background: rgb(102, 18, 102);}
+            body > h5 tel > home {color:teal}
+        </style>
+    </head>
+    <body>
+        <h3>후손, 자손, 형제 선택자</h3>
+        <div>
+            <h4> Child selector </h4>
+        </div>
+        <p> 자식 선택자</p>
+        <h5>
+            <sno>1234567</sno><br>
+            <std>김민지</std><br>
+            <tel>
+                <office>00-000-0000
+                    <tel>00000
+                        <home>111111</home>
+                    </tel>
+                </office><br>
+                <home>010-0000-0000</home>
+            </tel>
+        </h5>
+ 
+
+        <!-- ------------------------------------------------------------->
+        <hr size="10" align="left" width="100%" noshade="noshade" ></hr>
+        <footer>
+            <small>
+                &nbsp;&nbsp; &copy; 김민지 &nbsp;&nbsp;
+                &nbsp;&nbsp; &reg; 2021.01.21
+            </small>
+        </footer>
+    </body>
+</html>
