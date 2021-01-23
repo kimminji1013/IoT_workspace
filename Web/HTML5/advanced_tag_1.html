@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>태그 고급 문법2</title>
+    </head>
+    <body>
+        <header>
+            <center>
+                <h1>&lt; 입력 양식 태그, 공간 분할 태그&gt; </h1>
+            </center>
+        </header>
+        <section>
+            <article>
+                 <h3> GET 방식_required </h3>
+                 <!-- required는 입력값이 있어야 실행됨-->
+                 <form action="basic_tag/sub.html" method="get">
+                    <fieldset style="width:500; height:100">
+                        <legend>로그인</legend>
+                        <!-- name 속성은 url에 표시될 때 사용. -->
+                        <p>ID : <input type="text" name="ID" size="15"
+                                placeholder="아이디" required> </p>
+                        <p>PW : <input type="text" name="passwd" size="15"
+                                placeholder="비밀번호" required></p>
+                        <p></p> 
+                        <!-- 내용이 없고 단락을 띄우고 싶을 때 <p/> -->
+                        <input type='submit' value="전송" >
+                        <input type="reset" value="다시작성">
+                    </fieldset>
+                 </form> 
+            </article>
+        </section>
+        <!-- ---------------------------------------------------------------------------------->       
+        <hr size="2">
+        <section>
+            <article>
+                 <h3> text 공간 입력 양식 </h3>
+                 <!-- textarea 속성은 요즘 CSS로 지정함-->
+                 <form action="basic_tag/sub.html" method="get">
+                     <textarea rows="5" cols="100" placeholder=
+                         "텍스트를 작성하는 공간입니다.">
+                     </textarea>
+                     <p/>
+                     <input type='submit' value="전송" >
+                     <input type="reset" value="다시작성">
+                 </form> 
+            </article>
+        </section>
+        <!-- ---------------------------------------------------------------------------------->
+        <hr size="2">
+        <section>
+            <article>
+                 <h3> 라디오 입력 양식 </h3>
+                 <form>
+                     이름: <input type="text" name="name">
+                     <h4> 당신의 성별은 무엇입니까?</h4>
+                     <input type="radio" name="sex" value="male" checked>남자
+                     <input type="radio" name="sex" value="fdmale">여자
+                     <p/>
+                     <h4> 당신은 몇살입니까? </h4>
+                     <!-- label 태그는 버튼이 아니라 글자를 눌러도 클릭 되는 기능 -->
+                     <label><input type="radio" name="age" value="0~10">0~10</label>
+                     <input type="radio" name="age" value="10~20" >10~20
+                     <input type="radio" name="age" value="20~30" >20~30
+                     <input type="radio" name="age" value="30~40" >30~40
+                     <p/>
+                     <input type='submit' value="제출" >
+                     <input type="reset" value="다시작성">
+                 </form> 
+            </article>
+        </section>
+        <!-- ----------------------------------------------------------------------------------> 
+        <hr size="2">
+        <section>
+            <article>
+                 <h3> 체크박스 양식 </h3>
+                 <form>
+                     <h4> 현재 관심을 가지고 있는 학습 주제는 무엇입니까?</h4>
+                     <!-- label 태그는 버튼이 아니라 글자를 눌러도 클릭 되는 기능 -->
+                     <label><input type="checkbox" name="subject" value="HTML5">HTML5</label>
+                     <label><input type="checkbox" name="subject" value="CSS3">CSS3</label>
+                     <label><input type="checkbox" name="subject" value="Javascript">Javascript</label>
+                     <label><input type="checkbox" name="subject" value="Jquery">Jquery</label>
+                     <label><input type="checkbox" name="subject" value="기타">기타</label>
+                     <textarea rows="2" cols="10" placeholder=
+                         "관심있는 분야를 적어주세요.">
+                     </textarea>
+                     <p/>
+                     <input type='submit' value="제출" >
+                     <input type="reset" value="다시작성">
+                 </form> 
+            </article>
+        </section>
+        <!-- ----------------------------------------------------------------------------------> 
+        <hr size="2">
+        <section>
+            <article>
+                 <h3>선택 목록</h3>
+                 <form>
+                    <h4>관심있는 주제 중 한가지를 선택해 주세요.</h4>
+                    <!-- select에 multiple property 넣으면 복수 선택 가능. (ctrl 누르고 선택) -->
+                    <select name="subject">
+                        <!-- 라디오에서는 checked, 선택에서는 selected로 default 값 설정 -->
+                        <option value="1" selected>HTML5</option>
+                        <option value="2" >CSS3</option>
+                        <option value="3" >Javascript</option>
+                        <option value="4" >Jquery</option>
+                        <option value="5" >없음</option>
+                    </select> 
+                     <p/>
+                     <input type='submit' value="제출" >
+                     <input type="reset" value="다시작성">
+                 </form> 
+            </article>
+        </section>
+        <hr size="10" align="left" width="100%" noshade="noshade" ></hr>
+        <footer>
+            <small>
+                &nbsp;&nbsp; &copy; 김민지 &nbsp;&nbsp;
+                &nbsp;&nbsp; &reg; 2021.01.21
+            </small>
+        </footer>
+    </body>
+</html>

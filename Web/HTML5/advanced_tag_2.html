@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>태그 고급 문법 2</title>
+    </head>
+    <body>
+        <header>
+            <center>
+                <h1>&lt; 입력 양식 태그, 공간 분할 태그 &gt; </h1>
+            </center>
+        </header>
+        <section>
+            <article>
+                    <h3> &lt;input type='date'&gt; 입력 폼 </h3>                 
+                <form>
+                    <h4>오늘 날짜 입력</h4>
+                    Today: <input type="date" name="today">
+                    <h4>프로젝트 수행 기간</h4>
+                    From : <input type="date" name="from" min="2020-12-01" max="2021-12-31">
+                    To : <input type="date" name="to" min="2020-12-01" max="2021-12-31">
+                     <p></p> 
+                     <!-- 내용이 없고 단락을 띄우고 싶을 때 <p/> -->
+                     <input type='submit' value="전송" >
+                     <input type="reset" value="다시작성">
+                 </form> 
+            </article>
+        </section>
+        <!-- ----------------------------------------------------------------------------------> 
+        <hr size=2></hr>
+        <section>
+            <article>
+                <form>
+                    <h4>이메일을 정확하게 입력하세요.</h4>
+                    이메일: <input type="email" name="myemail">
+                    <p></p>
+                    <input type="submit" value="제출">
+                    <input type="reset" value="다시작성">
+                    </form>
+            </article>
+        </section>
+        <!-- ----------------------------------------------------------------------------------> 
+        <hr size=2></hr>
+        <section>
+            <article>
+                <h3>div 공간 분할 </h3>
+                    <div style="background-color: #FFFF00;">div 첫 번째 영역입니다 .</div>
+                    <div style="background-color: #00FF00;">div 두 번째 영역입니다 .</div>
+                    <div style="background-color: #FF00FF;">div 세 번째 영역입니다 .</div>
+                    <p/>
+                <h3>span 공간 분할 </h3>
+                    <span style="background-color: #FFFF00;">span 첫 번째 영역입니다 .</span>
+                    <span style="background-color: #00FF00;">span 두 번째 영역입니다 .</span>
+                    <span style="background-color: #FF00FF;">span 세 번째 영역입니다 .</span>
+            </article>
+        </section>
+        <hr size="10" align="left" width="100%" noshade="noshade" ></hr>
+        <footer>
+            <small>
+                &nbsp;&nbsp; &copy; 김민지 &nbsp;&nbsp;
+                &nbsp;&nbsp; &reg; 2021.01.21
+            </small>
+        </footer>
+    </body>
+</html>

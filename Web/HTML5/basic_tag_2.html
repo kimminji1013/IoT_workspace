@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>태그 기본 문법</title>
+    </head>
+    <body>
+        <header>
+            <center>
+                <h1>&lt; HTML 특수문자 &gt; </h1>
+            </center>
+        </header>
+        <section>
+            <article>
+                <h3> 순서가 없는 목록 만들 때</h3>
+                <ul>
+                    <li>Americano</li>
+                    <li>Latte</li>
+                    <li>Juice</li>
+                    <li>Tea</li>
+                    <ul>
+                        <li>Black Tea</li>
+                        <li>Green Tea</li>
+                        <ul>
+                            <li>hot</li>
+                            <li>ice</li>
+                        </ul>
+                    </ul>
+                    <li>Milt</li>
+                </ul>
+            </article>
+            <article>
+                <h3>순서가 있는 목록 만들 때</h3>
+                <or>
+                    <li>Apple</li>
+                    <li>Banana</li>
+                    <li>Orange</li>
+                    <li>Lemon</li>
+                </or>
+            </article>
+            <article>
+                <h3>정의형 목록 만들 때</h3>
+                <dl>
+                    <dt>Apple</dt>
+                    <dd>-red</dd>
+                    <dd>-green</dd>
+                </dl>
+            </article>
+        </section>
+        <!-- section 나눌 때 -->
+        <hr size="2" align="left" width="50%" noshade="noshade"></hr>
+        <section>
+            <article>
+                <h3>표 만들기</h3>
+                <table border="1" style="width:50%">
+                    <tr>
+                        <th>이름</th>
+                        <th>점수</th>
+                    </tr>
+                    <tr>
+                        <td>고은찬</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>최한별</td>
+                        <td>90</td>
+                        <td>90</td>
+                    </tr>
+                </table>
+            </article>
+            <hr/>
+            <article>
+                <h3>표 만들기</h3>
+                <table border="1" style="width:50%">
+                    <caption>행 통합 테이블 만들어보자</caption>
+                    <tr>
+                        <th>1행</th>
+                        <td>1행 2열</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">2행</th>
+                        <td>2행 2열</td>
+                    </tr>
+                    <tr>
+                        <td>3행 2열</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+        <hr size="2" align="left" width="50%" noshade="noshade"></hr>
+        <section>
+            <article>
+                <h3>이미지 표현</h3>
+                <img src="cat.jfif" alt="귀여운 고양이지만, 이미지가 표현되지 않습니다." width=20% >
+                <h5>이미지에 설명을 추가하고, 오른쪽에 정렬하고 싶을 때</h5>
+                <img src="cat.jfif" title="HTML5 이미지" style="float: right" width=20% >
+            </article>
+        </section>
+        <hr size="10" align="left" width="100%" noshade="noshade" ></hr>
+        <footer>
+            <small>
+                &nbsp;&nbsp; &copy; 김민지 &nbsp;&nbsp;
+                &nbsp;&nbsp; &reg; 2021.01.21
+            </small>
+        </footer>
+    </body>
+</html>
